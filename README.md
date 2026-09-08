@@ -1,4 +1,4 @@
-# Procedural Soundscape Engine (5.1 → Denon AVR)
+# Procedural Soundscape Engine (5.1 → AVR)
 
 Generate a procedurally-created ambient soundscape (e.g. a bar: background chatter, clinking ice cubes, a piano player in the corner) that plays for hours without a noticeable loop, routed to a 5.1 surround system via an AV receiver.
 
@@ -15,7 +15,7 @@ Generate a procedurally-created ambient soundscape (e.g. a bar: background chatt
 |---|---|---|---|
 | **Compute** | Raspberry Pi 4 (4GB) | Raspberry Pi 5 (8GB) | Mini-PC (Intel N100) |
 | **Audio output** | Pi HDMI direct | Pi HDMI direct | USB audio interface (Behringer UMC404HD, 4 out) |
-| **Channel routing** | HDMI → Denon (6ch PCM, can be unstable) | HDMI → Denon (6ch PCM) | USB → RCA/XLR → Denon Multichannel-In |
+| **Channel routing** | HDMI → AVR (6ch PCM, can be unstable) | HDMI → AVR (6ch PCM) | USB → RCA/XLR → AVR Multichannel-In |
 | **Storage** | microSD 32GB | microSD 64GB (A2 rated) | NVMe SSD via USB |
 | **Software** | Pure Data | SuperCollider | SuperCollider |
 | **Cooling** | Passive | Active (fan case) | Passive (Mini-PC) |
@@ -25,7 +25,7 @@ Generate a procedurally-created ambient soundscape (e.g. a bar: background chatt
 - Option A: cheapest entry point; HDMI 6-channel PCM can be flaky depending on driver/kernel version.
 - Option B: good balance — modern `vc4-hdmi` drivers (Bullseye/Bookworm onward) are noticeably more stable for multichannel PCM than on the Pi 3.
 - Option C: bypasses HDMI multichannel issues entirely via dedicated audio hardware — most reliable, at extra cost.
-- If your Denon AVR has a **6× RCA multichannel analog input**, Option C is the safest path.
+- If your AVR has a **6× RCA multichannel analog input**, Option C is the safest path.
 
 ## Setup Guide
 
@@ -43,11 +43,11 @@ Pick from the BOM table above based on budget vs. reliability needs.
    ```
    speaker-test -c 6 -D hw:0
    ```
-   Confirm all 6 channels arrive correctly at the Denon before proceeding.
+   Confirm all 6 channels arrive correctly at the AVR before proceeding.
 
 ### 3. USB audio interface setup (Option C)
 1. Connect interface (e.g. Behringer UMC404HD) via USB.
-2. Wire outputs to Denon's Multichannel Analog In (RCA).
+2. Wire outputs to AVR's Multichannel Analog In (RCA).
 3. Configure as default ALSA/JACK device — no HDMI driver dependency.
 
 ### 4. Install audio engine
