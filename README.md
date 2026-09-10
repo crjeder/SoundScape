@@ -64,8 +64,23 @@ Pick from the BOM table above based on budget vs. reliability needs.
 
 | Purpose | Tool |
 |---|---|
-| Procedural audio synthesis | SuperCollider, Pure Data, Csound |
+| Procedural audio synthesis | SuperCollider, **Pure Data**, Csound, **MaxMSP** |
 | Ambisonics panning/decoding | SPARTA plugins, Blender Ambisonics tools, built-in Pd/SC objects |
 | Object-based audio metadata (open standard) | ADM (Audio Definition Model) |
+
+Use [OpenAL](https://github.com/kcat/openal-soft) for the sound rendering. [Dokumentation](https://www.openal.org/documentation/)
+
+## Related Projects
+- https://github.com/DatanoiseTV/gener8
+- https://github.com/joelobros23/SynthCity_API
+- https://github.com/cosmicmarley17/digital-sea
+- https://github.com/5paceb0i/ripple-experiment
+- https://github.com/erkyrath/boodler
+- https://github.com/justinsalamon/scaper
+- https://github.com/iver56/audiomentations
+- https://github.com/MitchellAcoustics/Soundscapy
+- https://mynoise.net/
+- https://github.com/SoundScapeRenderer/ssr
+
 
 *Note: Dolby Atmos itself is proprietary — there is no open-source encoder producing certified Atmos bitstreams. This setup achieves the same object-based spatial principle through open tools, self-rendered directly to your 5.1 speaker layout instead of going through a licensed Atmos decoder.*
